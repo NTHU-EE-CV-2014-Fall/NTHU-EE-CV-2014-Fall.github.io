@@ -1,1 +1,260 @@
-Hello World
+<!DOCTYPE html PUBLIC "-//W3C//DTD html 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>EE 6485 Computer Vision</title>
+
+<!--<script src="./CS 143 Introduction to Computer Vision_files/lib.js" type="text/javascript"></script>
+<script src="./CS 143 Introduction to Computer Vision_files/popup.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+// redefining default features
+var _POPUP_FEATURES = 'width=500,height=300,resizable=1,scrollbars=1,titlebar=1,status=1';
+</script>-->
+
+<link media="all" href="./files/glab.css" type="text/css" rel="StyleSheet">
+<style type="text/css" media="all">
+img {
+	padding-right: 0px; padding-left: 10px; FLOAT: right; padding-bottom: 10px; padding-top: 10px
+}
+
+#primarycontent {
+	margin-left: auto;  
+    width: expression(document.body.clientWidth > 995? "995px": "auto" );
+    margin-right: auto;
+    text-align: left;
+    max-width: 995px 
+}
+
+body {
+	text-align: center
+}
+</style>
+
+<meta content="MShtml 6.00.2800.1400" name="GENERATOR"></head>
+
+<body>
+
+<div id="primarycontent">
+<center><h1>EE 6485 Computer Vision 計算機視覺</h1>
+<h2>Fall 2014, Tuesday 5:30pm to 6:20pm, Thursday 3:30pm-5:20pn, Location DELTA台達202<br>
+Instructor: <a href="http://aliensunmin.github.io">Min Sun</a></h2>
+<h3>
+	TAs: 蕭凡凱 <a href="mailto:codetectiveol@gmail.com">codetectiveol@gmail.com</a>
+</h3>
+<h3>
+New!!! <a href="https://www.youtube.com/playlist?list=PLxbRYH4x9-XtmXrrqTPLfMQWuzwQSLI63">Show and tell Youtube Playlist</a>
+</h3>
+<iframe width="560" height="315" src="//www.youtube.com/embed/videoseries?list=PLxbRYH4x9-XtmXrrqTPLfMQWuzwQSLI63" frameborder="0" allowfullscreen></iframe>
+
+</center>
+<br>
+<img style="float: right; padding: 15px; padding-right: 0px;" height="250" alt="Computer Vision, art by hinesedora.com" src="./files/Doraemon.png"/>
+
+<h2>Course Description</h2>
+<br>
+Can computers understand the visual world as we could? This course treats vision as a process of inference from noisy and uncertain data and emphasizes probabilistic, statistical, data-driven approaches. Topics include image processing; segmentation, grouping, and boundary detection; recognition and detection; motion estimation and structure from motion. This class will also lead you to the discussion of applications applying state-of-the-art techbiques in <i>recognition</i>, <i>detection</i>, and <i> video analysis</i>. 
+<br><br>
+The course will consist of four programming projects, one final project, and a few <a href="https://www.youtube.com/watch?v=PhvDIdGxTik">show-and-tell</a> sessions.
+Please find information about projects and show-and-tell session in the <a href="#Sy">syllabus</a>.
+
+<h2>Prerequisites</h2>
+This course requires programming experience (mainly Matlab) as well as linear algebra, basic calculus, and basic probability. Previous knowledge of visual computing will be helpful.
+
+<h2>Textbook</h2>
+Readings will be assigned in <a href="http://szeliski.org/Book/">"Computer Vision: Algorithms and Applications"</a> by <a href="http://research.microsoft.com/en-us/um/people/szeliski/">Richard Szeliski</a>. The book is available for free online or available for purchase.
+
+<h2>Grading</h2>
+Your final grade will be made up from
+<ul id="grades">
+  <li>60% 4 programming projects</li>
+  <li>30% final projects (<a href="https://github.com/NTHU-EE-CV-2014-Fall/class_materials/blob/master/finalProjectIdeas.md">Project Ideas</a>)</li>
+  <li>10% class participation</li>
+</ul>
+You will lose 10% each day for late projects. However, you have three "late days" for the whole course. That is to say, the first 24 hours after the due date and time counts as 1 day, up to 48 hours is two and 72 for the third late day. This will not be reflected in the initial grade reports for your assignment, but they will be factored in and distributed at the end of the semester so that you get the most points possible.
+
+
+<h2 id="important_links"> Important Links: </h2>
+<ul id="all">
+<!--
+    <li><a href="https://lists.cs.brown.edu/sympa/info/cs143.2011-12.f"> Mailing List </a></li>
+-->
+    <li><a href="https://github.com/NTHU-EE-CV-2014-Fall">Github course repositories: slides, homeworks, etc.</a></li>
+    <li><a href="./files/course_policy.pdf">Collaboration Policy</a></li>
+<!--
+    <li><a href="asgn">All Available Assignments</a></li>
+    <li><a href="results">All Project Results</a></li>
+-->
+</ul>
+
+<h2 id="hours"> Contact Info and Office Hours: </h2>
+You can contact the TA or the professor with any of the following:
+<ul>
+<li> Min Sun: <a href="mailto:sunmin@ee.nthu.edu.tw">sunmin@ee.nthu.edu.tw</a></li>
+<li> 蕭凡凱: <a href="mailto:codetectiveol@gmail.com">codetectiveol@gmail.com</a></li>
+</ul>
+
+Office Hours
+<ul>
+    <li>Min Sun, 台達管962, 電話 035731058, 時間：Tuesday 2-4pm</li>
+    <li>蕭凡凱, 資電804, 電話 80991, 時間：Friday 10am-12pm</li>
+</ul>
+
+
+<h2 id="Sy"><i>Tentative</i> Syllabus</h2>
+<style type="text/css">
+table.tableizer-table {
+border: 1px solid #CCC; font-family: Arial, Helvetica, sans-serif
+font-size: 12px;
+} 
+.tableizer-table td {
+padding: 4px;
+margin: 3px;
+border: 1px solid #ccc;
+}
+.tableizer-table th {
+background-color: #104E8B; 
+color: #FFF;
+font-weight: bold;
+}
+</style><table class="tableizer-table">
+<tr class="tableizer-firstrow"><th>lecture</th><th>Class Dates</th><th>Topic</th><th>Slides</th><th>Reading</th><th>Homework/Exam</th></tr>
+<tr><td>1</td><td>T, Sept. 16</td><td>Introduction to computer vision</td><td><a href="https://github.com/NTHU-EE-CV-2014-Fall/class_materials/blob/master/slides/01/01.pdf?raw=true">pdf</a></td><td>Szeliski 1</td><td>&nbsp;</td></tr>
+<tr bgcolor="#00FFFF"><td></td><td></td><td>Image Formation and Filtering</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>2</td><td>Th, Sept. 18</td><td>Cameras and optics & git and github</td><td> <a href="https://github.com/NTHU-EE-CV-2014-Fall/class_materials/tree/master/slides/02">pdf</a></td><td>Szeliski 2.1 especially 2.1.5</td><td>homework 0 out</td></tr>
+<tr><td>3</td><td>T, Sept. 23</td><td>Light and color</td><td><a href="https://github.com/NTHU-EE-CV-2014-Fall/class_materials/tree/master/slides/03">pdf</a></td><td>Szeliski 2.2 and 2.3</td><td>&nbsp;</td></tr>
+<tr><td>4</td><td>Th, Sept. 25</td><td>Image filtering & MATLAB Tutorial</td><td><a href="https://github.com/NTHU-EE-CV-2014-Fall/class_materials/tree/master/slides/04">pdf</a></td><td>Szeliski 3.2</td><td>homework 0 due</td></tr>
+<tr><td>5</td><td>T, Sept. 30</td><td>Thinking in frequency</td><td><a href="https://github.com/NTHU-EE-CV-2014-Fall/class_materials/tree/master/slides/05">pdf</a></td><td>Szeliski 3.4</td><td>homework 1 (hybrid image) out<img style="float: right; padding: 15px; padding-right: 0px;" height="250" alt="hybrid image by cwc1612" src="./files/hybrid_image_scales.jpg"/></td></tr>
+<tr><td>6</td><td>Th, Oct. 2</td><td>Image pyramids and applications & <font color="red">show and tell</font> <br>
+	(江長霖, 蕭善文, 蕭順仁, 李豪韋, and 洪介元)
+</td><td><a href="https://github.com/NTHU-EE-CV-2014-Fall/class_materials/tree/master/slides/06">pdf</a></td><td>Szeliski 3.5.2 and 8.1.1</td><td><iframe width="200" height="113" src="//www.youtube.com/embed/videoseries?list=PLxbRYH4x9-XsO0veSNdLkJN1TCOguUNEu" frameborder="0" allowfullscreen></iframe></td></tr>
+<tr bgcolor="#00FFFF"><td></td><td></td><td>Feature Detection and Matching</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>7</td><td>T, Oct. 7</td><td>Edge detection</td><td><a href="https://github.com/NTHU-EE-CV-2014-Fall/class_materials/tree/master/slides/07">pdf</a></td><td>Szeliski 4.2</td><td>&nbsp;</td></tr>
+<tr><td>8</td><td>Th, Oct. 9</td><td>Interest points, corners, and local image features</td><td><a href="https://github.com/NTHU-EE-CV-2014-Fall/class_materials/tree/master/slides/08_09">pdf</a></td><td>Szeliski 4.2</td><td>&nbsp;</td></tr>
+<tr><td>9</td><td>T, Oct. 14</td><td>Feature matching and hough transform</td><td><a href="https://github.com/NTHU-EE-CV-2014-Fall/class_materials/tree/master/slides/10">pdf</a></td><td>Szeliski 4.3</td><td>homework 1 due</td></tr>
+<tr><td>10</td><td>Th, Oct. 16</td><td>Model fitting and RANSAC & <font color="red">show and tell</font><br>
+	(陳奕安, 程韋翰, 張馨云, 陳亘宇, 陳嘉臨, 林維誠, and 廖育賢)
+	</td><td><a href="https://github.com/NTHU-EE-CV-2014-Fall/class_materials/tree/master/slides/11">pdf</a></td><td>Szeliski 4.3</td><td>homework 2 (image stitching) out <img style="float: right; padding: 15px; padding-right: 0px;" height="200" alt="stitched images by lisajwhl" src="./files/nthu_campus.png"/><br>
+	<iframe width="200" height="113" src="//www.youtube.com/embed/videoseries?list=PLxbRYH4x9-XvCTHZlMCaGQ8T6PmsnKTeO" frameborder="0" allowfullscreen></iframe>
+</td></tr>
+<tr><td>11</td><td>T, Oct. 21</td><td>*Panorama Stitching</td><td><a href="https://github.com/NTHU-EE-CV-2014-Fall/class_materials/tree/master/slides/12">pdf</a></td><td>Szeliski 9</td><td>&nbsp;</td></tr>
+<tr bgcolor="#00FFFF"><td></td><td></td><td>Multiple Views and Motiong</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>12</td><td>Th, Oct. 23</td><td>Stereo and Structure from Motion</td><td> <a href="https://github.com/NTHU-EE-CV-2014-Fall/class_materials/tree/master/slides/13">pdf1</a>, <a href="https://github.com/NTHU-EE-CV-2014-Fall/class_materials/tree/master/slides/14">pdf2</a></td><td>Szeliski 7</td><td>&nbsp;</td></tr>
+<tr><td>13</td><td>T, Oct. 28</td><td>Feature Tracking and Optical Flow</td><td><a href="https://github.com/NTHU-EE-CV-2014-Fall/class_materials/tree/master/slides/15">pdf</a></td><td>Szeliski 4.1.4 and 8.4</td><td>&nbsp;</td></tr>
+<tr bgcolor="#00FFFF"><td></td><td></td><td>Machine Learning Crash Course</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>14</td><td>Th, Oct. 30</td><td>Machine learning intro and clustering</td><td><a href="https://github.com/NTHU-EE-CV-2014-Fall/class_materials/tree/master/slides/16">pdf</a></td><td>Szeliski 5.3</td><td>homework 2 due & <a href="#pp">project proposal due</a></td></tr>
+<tr><td>15</td><td>T, Nov. 4</td><td>Machine learning: classification</td><td><a href="https://github.com/NTHU-EE-CV-2014-Fall/class_materials/tree/master/slides/17">pdf</a></td><td></td><td>homework 3 (scene recognition) out<img style="float: right; padding: 15px; padding-right: 0px;" height="200" alt="scene recognition by THShih" src="./files/hw3acc.png"/></td></tr>
+<tr bgcolor="#00FFFF"><td></td><td></td><td>Recognition</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>16</td><td>Th, Nov. 6</td><td>Recognition overview, bag of features</td><td><a href="https://github.com/NTHU-EE-CV-2014-Fall/class_materials/tree/master/slides/18">pdf</a></td><td>Szeliski 14</td><td>&nbsp;</td></tr>
+<tr><td>17</td><td>T, Nov. 11</td><td>large-scale instance recognition</td><td><a href="https://github.com/NTHU-EE-CV-2014-Fall/class_materials/tree/master/slides/19">pdf</a></td><td>Szeliski 14.3.2</td><td>&nbsp;</td></tr>
+<tr><td>18</td><td>Th, Nov. 13</td><td>Detection with sliding windows: Viola Jones and Dalal Triggs</td><td><a href="https://github.com/NTHU-EE-CV-2014-Fall/class_materials/tree/master/slides/20">pdf</a></td><td>Szeliski 14.1</td><td>&nbsp;</td></tr>
+<tr><td>19</td><td>T, Nov. 18</td><td>Mixture of Gaussians and advanced feature encoding</td><td><a href="https://github.com/NTHU-EE-CV-2014-Fall/class_materials/tree/master/slides/22">pdf</a></td><td></td><td>homework 3 due</td></tr>
+<tr><td>20</td><td>Th, Nov. 20</td><td> Scene recognition & <font color="red">show and tell</font><br>
+	(林育堂, 鈕采紋, 賴柏村, 陳瑋晨, 黃家琬, 呂立嫻, and 郭達人)
+</td><td><a href="https://github.com/NTHU-EE-CV-2014-Fall/class_materials/tree/master/slides/21">pdf</a></td><td></td><td>homework 4 (face detection) out<img style="float: right; padding: 15px; padding-right: 0px;" height="200" alt="face detection by anXDdd" src="./files/hw4face_girls.png"/><img style="float: right; padding: 15px; padding-right: 0px;" height="200" alt="face detection by anXDdd" src="./files/hw4face_boys.png"/><iframe width="200" height="113" src="//www.youtube.com/embed/videoseries?list=PLxbRYH4x9-Xsdj_KOIDi3Bi3CEHzYoh4r" frameborder="0" allowfullscreen></iframe></td></tr>
+<tr><td>21</td><td>T, Nov. 25</td><td>Modern Object Detection</td><td><a href="https://github.com/NTHU-EE-CV-2014-Fall/class_materials/tree/master/slides/23">pdf</a></td><td>Szeliski 14.1</td><td>&nbsp;</td></tr>
+<tr><td>22</td><td>Th, Nov. 27</td><td>Internet scale vision</td><td><a href="https://github.com/NTHU-EE-CV-2014-Fall/class_materials/tree/master/slides/24">pdf</a></td><td>Szeliski 14.5</td><td>&nbsp;</td></tr>
+<tr><td>23</td><td>T, Dec. 2</td><td>Human computation and crowdsourcing</td><td><a href="https://github.com/NTHU-EE-CV-2014-Fall/class_materials/tree/master/slides/25">pdf</a></td><td></td><td>&nbsp;</td></tr>
+<tr><td>24</td><td>Th, Dec. 4</td><td>Attributes and more crowdsourcing</td><td><a href="https://github.com/NTHU-EE-CV-2014-Fall/class_materials/tree/master/slides/26">pdf</a></td><td></td><td>homework 4 due</td></tr>
+<tr><td>25</td><td>T, Dec. 9</td><td>Sketch Recognition and more crowdsourcing</td><td><a href="https://github.com/NTHU-EE-CV-2014-Fall/class_materials/tree/master/slides/27">pdf</a></td><td></td><td>&nbsp;</td></tr>
+<tr><td>26</td><td>Th, Dec. 11</td><td>Deep Learning for Computer Vision</td><td><a href="https://github.com/NTHU-EE-CV-2014-Fall/class_materials/tree/master/slides/28">pdf</a></td><td></td><td><a href="#ppm">midterm project report due</a></td></tr>
+<tr><td>27</td><td>T, Dec. 16</td><td>Context and Spatial Layout</td><td><a href="https://github.com/NTHU-EE-CV-2014-Fall/class_materials/tree/master/slides/29">pdf</a></td><td></td><td>&nbsp;</td></tr>
+<tr><td>28</td><td>Th, Dec. 18</td><td>Context and Scene parsing & <font color="red">show and tell</font><br>
+	(余若君, 吳品樺, 黃立仁, 黃俊穎, 黃彥學, and 史敦槐)
+</td><td><a href="https://github.com/NTHU-EE-CV-2014-Fall/class_materials/tree/master/slides/30">pdf</a></td><td></td><td><iframe width="200" height="113" src="//www.youtube.com/embed/videoseries?list=PLxbRYH4x9-Xu1MZSpRVjuJBYDoN1xsJbh" frameborder="0" allowfullscreen></iframe></td></tr>
+<tr><td>29</td><td>T, Dec. 23</td><td>*3D vision: Depth, Human Pose</td><td><a href="https://github.com/NTHU-EE-CV-2014-Fall/class_materials/tree/master/slides/31">pdf</a></td><td></td><td>&nbsp;</td></tr>
+<tr><td>30</td><td>Th, Dec. 25</td><td><a href="#pp2">Project Pitch</a></td><td>pdf</td><td></td><td><iframe width="200" height="113" src="//www.youtube.com/embed/videoseries?list=PLxbRYH4x9-XvPXFQI9lzcMdPnHFty63XI" frameborder="0" allowfullscreen></iframe></td></tr>
+<tr><td>31</td><td>T, Dec. 30</td><td>*3D vision: Personal Robots and PCL</td><td><a href="https://github.com/NTHU-EE-CV-2014-Fall/class_materials/tree/master/slides/32">pdf</a></td><td></td><td>&nbsp;</td></tr>
+<tr><td>No Class</td><td>Th, Jan. 1</td><td>&#20803;&#26086; Happy new year</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<!--<tr><td>32</td><td>T, Jan. 6</td><td>*Deep Learning</td><td>pdf</td><td></td><td>&nbsp;</td></tr>--!>
+<tr><td>32</td><td>T, Jan. 6</td><td>*Region-based Object Detector </td><td><a href="https://github.com/NTHU-EE-CV-2014-Fall/class_materials/tree/master/slides/33">pdf</a></td><td></td><td>&nbsp;</td></tr>
+<tr><td>33</td><td>Th, Jan. 8</td><td><a href="#ppc">Project presentation</a></td><td></td><td></td><td>&nbsp;</td></tr>
+<tr><td>34</td><td>T, Jan. 13</td><td>Project presentation</td><td></td><td></td><td></td></tr>
+<tr><td>34</td><td>Th, Jan. 15</td><td>No class</td><td></td><td></td><td><a href="#pfr">final project report due</a></td></tr>
+</table>
+
+<h2 id="pp">Project Proposal Format:</h2> 
+- max 4 pages;<br>
+- 3 sections:<br>
+<ul>
+  <li>title and authors</li>
+  <li>sec 1. intro: problem you want to solve and why</li>
+  <li>sec 2. technical part: how do you propose to solve it?</li>
+  <li>sec 3. milestones (dates and sub-goals)</li>
+  <li>references</li>
+  </ul>
+- final format: pdf, please!<br>
+ 
+<h2 id="ppm">Project Progress (mid-term) Report Format:</h2>
+- max 4 pages;<br>
+- 3 sections:<br>
+<ul>
+  <li>title and authors</li>
+  <li>sec 1. intro: problem you want to solve and why</li>
+  <li>sec 2. technical part: how do you propose to solve it?</li>
+  <li>sec 3. milestones achieved so far</li>
+  <li>sec 4. remaining milestones (dates and sub-goals)</li>
+  <li>references</li></ul>
+- <a href="http://www.pamitc.org/cvpr14/files/cvpr2014AuthorKit.zip">CVPR final format</a>: pdf, please!<br>
+
+<h2 id="pp2">Project Pitch:</h2>
+- Max 5 minutes (See <a href="https://www.kickstarter.com/discover/advanced?category_id=16&woe_id=Earth&sort=magic">videos</a> in Kickstarter for inspiration); <bt>
+- Content:
+<ul>
+	<li>What do you want to do (problem statement)?</li>
+	<li>Why do you want to do this (motivation)?</li>
+	<li>What will the "ideal" results or applications look like?
+	The results can be manually created just to show the idea. 
+	Don't worry if you can actually build a system to generate these ideal results or application. </li>
+</ul>
+
+<h2 id="pfr">Project Final Report Format:</h2>
+- Max 10 pages;<br>
+- Title and authors<br>
+- Abstract: short summary of the project with main results <br>
+- 6 sections:<br>
+<ul>
+  <li>Sec 1. Introduction: introduce the problem you want to solve, expain why it is important to solve it; and indicate the method
+   you used to solve it. add a concept figure showing the overall idea behind the method you are presenting. </li>
+  <li>Sec 2.1. Review of previous work (i.e. previous methods that have explored a similar problem)</li>
+  <li>Sec 2.2. Say why your method is better than previous work; and/or summarize the key main contributions of your work; </li>
+  <li>Sec 3.1: Technical part: Summary of the technical solution </li>
+  <li>Sec 3.2: Technical part: Details of the technical solution; you may want to decompose this section into several subsections; 
+    add figures to help your explanation.</li>
+  <li>Sec 4: Experiments: present here experimental results of the method you have implemented with plots, graphs, images 
+    and visualizations.</li>
+  <li>Sec 5: Conclusions: what's the take home message?</li>
+  <li>Sec 6: References</li></ul>
+- <a href="http://www.pamitc.org/cvpr14/files/cvpr2014AuthorKit.zip">CVPR final format</a>: pdf, please!<br>
+
+You can look at one of the recent instructor publications (such as <a href="grail.cs.washington.edu/pub/papers/sun2014rdh.pdf">this</a>) as an example.
+
+<h2>Project Report Evaluation:</h2>
+- Your project report will be evaluated based on the quality of the writing, the clarity of your technical explanation and, overall,  how well you get your message across. If you follow the structure above, you'll have good chances to do a good job. :)
+ 
+<h2>Project Source Code:</h2>
+<strike>There is no need to attach a print out of the source codes to the manuscript.
+Final source codes of your working program need to be shared with TA and the instructor on github;
+this file is due on the project submission deadline date.</strike>
+Code can be uploaded to github and shared with me as an option, but not a requirement.
+ 
+<h2 id="ppc">Project Presentation in Class:</h2>
+- The presentation must be TBA long. Please see this iLMS post for detailed presentation guidelines,
+which are also summarized below. 
+
+<h2>Presentation format:</h2>
+Your slides should consist of a title slide, followed by slides that discuss the following aspects of your project:
+<ul>
+<li>Problem Motivation/Description</li>
+<li>Technical Approach</li>
+<li>Some Results</li></ul>
+Please do not plan on using more than 5-6 slides.
+
+<h2>Evaluation:</h2>
+- Your team will be evaluated based on the clarity of the presentation, quality of the slides, how well you get your message across, and how well you handle the questions at the end. Note that the presentation can still contain ongoing/preliminary results; final results may be included in the final report.
+
+<h2>Acknowledgements:</h2>
+The materials from this class rely significantly on slides prepared by other instructors, especially James Hayes, Fei-Fei Li, and Silvio Savarese. Each slide set and assignment contains acknowledgements. 
+
+<div id="footer">
+<p style="CLEAR: both; margin: 0px">Comments, questions to <a href="http://aliensunmin.github.io">Min Sun</a>. 
+</p></div></div>
+</body></html>
